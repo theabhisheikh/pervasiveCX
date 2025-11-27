@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCHEMA_FILE="/opt/pervasivecx/current/db/schema.sql"
+LOG_FILE="/pervasiveCX_mnt/logs/db/pervasiveCX-db-init.log"
+
+mkdir -p "$(dirname "$LOG_FILE")"
+
+log() {
+  local level="$1"
+  local msg="$2"
+  local now
+  now="$(date --iso-8601=seconds)"
+  printf '[%s] %-5s %s\n' "$now" "$level" "$msg" | tee -a "$LOG_FILE"
+}
+
+PCX_COMMON="/opt/pervasivecx/current/lib/pcx-common.sh"
+if [[ -r "$PCX_COMMON" ]]; then
+  # shellcheck disable=SC1090
+  . "$PCX_COMMON"
+else
+  log "ERROR" "pcx-common.sh not found at $PCX_COMMON"
+  exit 1
+fi
+
+pcx_load_db_env
+
+if [[ ! -f "$SCHEMA_FILE" ]]; then
+  log "ERROR" "schema file not found at $SCHEMA_FILE"
+  exit 1
+fi
+
+log "INFO" "Starting DB init for db=$DB_NAME user=$DB_USER host=$DB_HOST port=$DB_PORT"
+
+# 1) Check connectivity
+if ! psql -At -h "$DB_HOST" -p "$DB_PORT" -d "$DB_NAME" -U "$DB_USER" -c "SELECT 1;" >/dev/null 2>&1; then
+  log "ERROR" "Cannot connect to database $DB_NAME as $DB_USER"
+  exit 1
+fi
+
+# 2) Check if key table exists
+existing_table="$(psql -At -h "$DB_HOST" -p "$DB_PORT" -d "$DB_NAME" -U "$DB_USER" \
+  -c "SELECT to_regclass('public.capture_session');" 2>/dev/null || true)"
+
+if [[ "$existing_table" == "public.capture_session" ]]; then
+  log "INFO" "Schema already present (capture_session exists). Nothing to do."
+  exit 0
+fi
+
+# 3) Apply schema
+log "INFO" "Schema not found. Applying schema from $SCHEMA_FILE..."
+if psql -h "$DB_HOST" -p "$DB_PORT" -d "$DB_NAME" -U "$DB_USER" -f "$SCHEMA_FILE"; then
+  log "INFO" "Schema applied successfully."
+  exit 0
+else
+  log "ERROR" "Schema apply failed. Check above errors."
+  exit 1
+fi

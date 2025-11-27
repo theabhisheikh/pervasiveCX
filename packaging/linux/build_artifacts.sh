@@ -16,17 +16,11 @@ echo "[INFO] Staging artifacts in ${STAGE_DIR}"
 rm -rf "${STAGE_DIR}"
 mkdir -p "${STAGE_DIR}"
 
-# 1) /opt/pervasivecx/current
-mkdir -p "${STAGE_DIR}/opt/pervasivecx"
-if [[ -d /opt/pervasivecx/current ]]; then
-  cp -a /opt/pervasivecx/current "${STAGE_DIR}/opt/pervasivecx/current"
-else
-  echo "[ERROR] /opt/pervasivecx/current not found on this machine." >&2
-  exit 1
-fi
-
-# 2) /pervasiveCX_mnt structure
+# 1) Prepare target layout under /pervasiveCX_mnt
 mkdir -p \
+  "${STAGE_DIR}/pervasiveCX_mnt/bin" \
+  "${STAGE_DIR}/pervasiveCX_mnt/lib" \
+  "${STAGE_DIR}/pervasiveCX_mnt/db" \
   "${STAGE_DIR}/pervasiveCX_mnt/web" \
   "${STAGE_DIR}/pervasiveCX_mnt/logs/core" \
   "${STAGE_DIR}/pervasiveCX_mnt/logs/web" \
@@ -36,32 +30,37 @@ mkdir -p \
   "${STAGE_DIR}/pervasiveCX_mnt/reports" \
   "${STAGE_DIR}/pervasiveCX_mnt/backups/db"
 
+# 2) Copy scripts from REPO layout (pervasiveCX_mnt/bin), NOT from /opt
+if [[ -f "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-app" ]]; then
+  cp "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-app" "${STAGE_DIR}/pervasiveCX_mnt/bin/"
+fi
+if [[ -f "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-db-init" ]]; then
+  cp "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-db-init" "${STAGE_DIR}/pervasiveCX_mnt/bin/"
+fi
+if [[ -f "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-collector" ]]; then
+  cp "${ROOT_DIR}/pervasiveCX_mnt/bin/pcx-collector" "${STAGE_DIR}/pervasiveCX_mnt/bin/"
+fi
+
+# 3) Shared lib (still from runtime if you don't have it in repo yet)
+if [[ -f /opt/pervasivecx/current/lib/pcx-common.sh ]]; then
+  mkdir -p "${STAGE_DIR}/pervasiveCX_mnt/lib"
+  cp /opt/pervasivecx/current/lib/pcx-common.sh "${STAGE_DIR}/pervasiveCX_mnt/lib/"
+fi
+
+# 4) Schema from repo (not from runtime)
+cp "${ROOT_DIR}/packaging/db/schema.sql" "${STAGE_DIR}/pervasiveCX_mnt/db/schema.sql"
+
+# 5) Web UI from your integration machine's /pervasiveCX_mnt/web
 if [[ -d /pervasiveCX_mnt/web ]]; then
   cp -a /pervasiveCX_mnt/web/. "${STAGE_DIR}/pervasiveCX_mnt/web/"
 fi
 
-# 3) Single systemd unit
+# 6) Systemd unit from repo template (not from /etc)
 mkdir -p "${STAGE_DIR}/etc/systemd/system"
-if [[ -f /etc/systemd/system/pervasivecx.service ]]; then
-  cp /etc/systemd/system/pervasivecx.service "${STAGE_DIR}/etc/systemd/system/pervasivecx.service"
-else
-  echo "[WARN] /etc/systemd/system/pervasivecx.service not found, skipping."
-fi
+cp "${ROOT_DIR}/packaging/linux/pervasivecx.service" \
+   "${STAGE_DIR}/etc/systemd/system/pervasivecx.service"
 
-# 4) Optional logrotate & cron (if you already use them)
-mkdir -p "${STAGE_DIR}/etc/logrotate.d" "${STAGE_DIR}/etc/cron.d"
-
-if [[ -f /etc/logrotate.d/pervasivecx ]]; then
-  cp /etc/logrotate.d/pervasivecx "${STAGE_DIR}/etc/logrotate.d/pervasivecx"
-fi
-
-if [[ -f /etc/cron.d/pervasivecx-backup ]]; then
-  cp /etc/cron.d/pervasivecx-backup "${STAGE_DIR}/etc/cron.d/pervasivecx-backup"
-fi
-
-# 5) No pcxctl anymore
-
-# ---- Create tarball ----
+# 7) Create tarball
 mkdir -p "${ROOT_DIR}/build"
 echo "[INFO] Creating tarball ${TARBALL}"
 rm -f "${TARBALL}"

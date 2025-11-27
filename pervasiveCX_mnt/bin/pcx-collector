@@ -1,0 +1,170 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_ENV_FILE="/pervasiveCX_mnt/config/app.env"
+LOG_FILE="/pervasiveCX_mnt/logs/core/pervasiveCX-collector.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+
+log_json() {
+  local level="$1"
+  local message="$2"
+  local now
+  now="$(date --iso-8601=seconds)"
+  printf '{"timestamp":"%s","level":"%s","component":"collector","service":"pcx-collector","message":"%s"}\n' \
+    "$now" "$level" "$message" >> "$LOG_FILE"
+}
+
+sql_escape() {
+  echo "$1" | sed "s/'/''/g"
+}
+
+MODE="${1:-full}"
+if [[ "$MODE" != "full" ]]; then
+  log_json "ERROR" "unsupported collector mode: $MODE"
+  exit 1
+fi
+
+# ---- Load DB config from app.env ----
+if [[ -f "$APP_ENV_FILE" ]]; then
+  # shellcheck disable=SC1090
+  . "$APP_ENV_FILE"
+fi
+
+DB_NAME="${PCX_DB_NAME:-pervasivecx}"
+DB_USER="${PCX_DB_USER:-postgres}"   # default to postgres, NEVER root
+DB_PASS="${PCX_DB_PASS-}"
+DB_HOST="${PCX_DB_HOST-}"            # may be empty -> Unix socket
+DB_PORT="${PCX_DB_PORT:-5432}"
+
+if [[ -n "${DB_PASS}" ]]; then
+  export PGPASSWORD="$DB_PASS"
+else
+  unset PGPASSWORD || true
+fi
+
+psql_base() {
+  local -a cmd=(psql -At -v ON_ERROR_STOP=1)
+
+  if [[ -n "$DB_HOST" ]]; then
+    cmd+=(-h "$DB_HOST")
+  fi
+  if [[ -n "$DB_PORT" ]]; then
+    cmd+=(-p "$DB_PORT")
+  fi
+
+  # CRITICAL: always specify DB and user here
+  cmd+=(-d "$DB_NAME" -U "$DB_USER")
+
+  # Print as a single line so read -a works correctly
+  printf '%s ' "${cmd[@]}"
+}
+
+# Build reusable psql command array WITH -U "$DB_USER"
+read -r -a PSQL_CMD <<< "$(psql_base)"
+
+HOSTNAME_SHORT="$(hostname -s)"
+SERVER_CODE="${PCX_SERVER_CODE:-$HOSTNAME_SHORT}"
+ENVIRONMENT="${PCX_ENVIRONMENT:-dev}"
+
+log_json "INFO" "collector started mode=$MODE server_code=$SERVER_CODE environment=$ENVIRONMENT db=$DB_NAME db_user=$DB_USER host=${DB_HOST:-<socket>} port=$DB_PORT"
+log_json "INFO" "psql_cmd=${PSQL_CMD[*]}"
+
+OS_NAME="$(grep '^NAME=' /etc/os-release 2>/dev/null | head -n1 | cut -d= -f2- | tr -d '"')"
+OS_VERSION="$(grep '^VERSION=' /etc/os-release 2>/dev/null | head -n1 | cut -d= -f2- | tr -d '"')"
+IP_ADDRESS="$(hostname -I 2>/dev/null | awk '{print $1}')"
+CPU_CORES="$(nproc)"
+RAM_MB="$(awk '/MemTotal/ {printf "%.0f", $2/1024}' /proc/meminfo)"
+
+OS_NAME_ESC="$(sql_escape "$OS_NAME")"
+OS_VERSION_ESC="$(sql_escape "$OS_VERSION")"
+HOSTNAME_ESC="$(sql_escape "$HOSTNAME_SHORT")"
+IP_ESC="$(sql_escape "$IP_ADDRESS")"
+ENV_ESC="$(sql_escape "$ENVIRONMENT")"
+SERVER_CODE_ESC="$(sql_escape "$SERVER_CODE")"
+
+# -------- 1) capture_session row --------
+CAPTURE_ID="$("${PSQL_CMD[@]}" <<SQL
+INSERT INTO capture_session (trigger_type, triggered_by, status, notes)
+VALUES ('manual', 'ui:CaptureNow', 'running', 'full server snapshot')
+RETURNING id;
+SQL
+)"
+CAPTURE_ID="$(echo "$CAPTURE_ID" | head -n1 | tr -d '[:space:]')"
+
+if [[ -z "$CAPTURE_ID" ]]; then
+  log_json "ERROR" "failed to create capture_session"
+  exit 1
+fi
+
+log_json "INFO" "created capture_session id=$CAPTURE_ID"
+
+# -------- 2) server row (upsert) --------
+SERVER_ID="$("${PSQL_CMD[@]}" <<SQL
+INSERT INTO server (code, hostname, ip_address, environment, os_name, os_version, cpu_cores, ram_mb)
+VALUES ('$SERVER_CODE_ESC', '$HOSTNAME_ESC', '$IP_ESC', '$ENV_ESC', '$OS_NAME_ESC', '$OS_VERSION_ESC', $CPU_CORES, $RAM_MB)
+ON CONFLICT (code) DO UPDATE SET
+  hostname    = EXCLUDED.hostname,
+  ip_address  = EXCLUDED.ip_address,
+  environment = EXCLUDED.environment,
+  os_name     = EXCLUDED.os_name,
+  os_version  = EXCLUDED.os_version,
+  cpu_cores   = EXCLUDED.cpu_cores,
+  ram_mb      = EXCLUDED.ram_mb,
+  updated_at  = now()
+RETURNING id;
+SQL
+)"
+SERVER_ID="$(echo "$SERVER_ID" | head -n1 | tr -d '[:space:]')"
+
+if [[ -z "$SERVER_ID" ]]; then
+  log_json "ERROR" "failed to upsert server row for code=$SERVER_CODE"
+  exit 1
+fi
+
+log_json "INFO" "server row upserted id=$SERVER_ID code=$SERVER_CODE"
+
+# -------- 3) df -P -k into server_volume --------
+log_json "INFO" "collecting disk usage via df -P -k"
+
+while read -r filesystem size_kb used_kb avail_kb use_pct mountpoint; do
+  use_pct="${use_pct%\%}"
+  filesystem_esc="$(sql_escape "$filesystem")"
+  mountpoint_esc="$(sql_escape "$mountpoint")"
+
+  "${PSQL_CMD[@]}" <<SQL
+INSERT INTO server_volume (
+  server_id,
+  capture_session_id,
+  mount_point,
+  filesystem_type,
+  total_gb,
+  used_gb,
+  available_gb,
+  usage_percent,
+  raw_df_output
+) VALUES (
+  $SERVER_ID,
+  '$CAPTURE_ID',
+  '$mountpoint_esc',
+  '$filesystem_esc',
+  ROUND($size_kb/1024.0/1024.0, 2),
+  ROUND($used_kb/1024.0/1024.0, 2),
+  ROUND($avail_kb/1024.0/1024.0, 2),
+  $use_pct::numeric,
+  NULL
+);
+SQL
+
+done < <(df -P -k | sed "1d")
+
+log_json "INFO" "disk usage collection completed for capture_id=$CAPTURE_ID"
+
+# -------- 4) mark capture_session as success --------
+"${PSQL_CMD[@]}" <<SQL
+UPDATE capture_session
+SET status = 'success', ended_at = now()
+WHERE id = '$CAPTURE_ID';
+SQL
+
+log_json "INFO" "collector completed successfully capture_id=$CAPTURE_ID mode=$MODE"
+exit 0
