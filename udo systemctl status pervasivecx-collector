@@ -1,0 +1,9 @@
+● pervasivecx-core.service - pervasiveCX Core Service
+   Loaded: loaded (/etc/systemd/system/pervasivecx-core.service; enabled; vendor preset: disabled)
+   Active: activating (auto-restart) (Result: exit-code) since Thu 2025-11-27 13:25:53 IST; 120ms ago
+  Process: 10776 ExecStart=/opt/pervasivecx/current/bin/pcx-core [0;1;31m(code=exited, status=1/FAILURE)[0m
+ Main PID: 10776 (code=exited, status=1/FAILURE)
+
+Nov 27 13:25:53 secondary pcx-core[10776]: /opt/pervasivecx/current/bin/pcx-core: line 5: /pervasiveCX_mnt/logs/core/pervasiveCX-server.log: Permission denied
+Nov 27 13:25:53 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-core.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 13:25:53 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-core.service: Failed with result 'exit-code'.[0m

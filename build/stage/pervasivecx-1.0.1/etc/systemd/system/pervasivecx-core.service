@@ -1,0 +1,17 @@
+[Unit]
+Description=pervasiveCX Core Service
+After=network.target
+
+[Service]
+Type=simple
+User=pervasivecx
+Group=pervasivecx
+EnvironmentFile=-/pervasiveCX_mnt/config/app.env
+ExecStart=/opt/pervasivecx/current/bin/pcx-core
+Restart=on-failure
+RestartSec=5
+WorkingDirectory=/opt/pervasivecx/current
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

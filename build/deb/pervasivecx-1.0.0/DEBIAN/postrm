@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -e
+# Keep /pervasiveCX_mnt data

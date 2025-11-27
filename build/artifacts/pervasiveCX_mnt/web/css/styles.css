@@ -1,0 +1,347 @@
+/* Base layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.pcx-body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* Shell */
+.pcx-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top nav */
+.pcx-topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-bottom: 1px solid #111827;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 45%, #020617 100%);
+}
+
+.pcx-topnav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pcx-badge {
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.pcx-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.pcx-title {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.pcx-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.pcx-topnav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Capture button */
+.pcx-button-primary {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: #f9fafb;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.55);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.15s ease;
+}
+
+.pcx-button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.7);
+}
+
+.pcx-button-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.5);
+  opacity: 0.9;
+}
+
+/* Tabs */
+.pcx-tabs {
+  display: flex;
+  overflow-x: auto;
+  padding: 0 24px 10px 24px;
+  gap: 8px;
+  background: #020617;
+  border-bottom: 1px solid #111827;
+}
+
+.pcx-tab-button {
+  border-radius: 999px;
+  border: 1px solid #111827;
+  background: #020617;
+  color: #9ca3af;
+  padding: 6px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.pcx-tab-button:hover {
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+.pcx-tab-button.active-tab {
+  background: radial-gradient(circle at top, #1f2937 0, #020617 80%);
+  color: #f9fafb;
+  border-color: #4f46e5;
+}
+
+/* Main */
+.pcx-main {
+  flex: 1;
+  padding: 20px 28px 32px 28px;
+}
+
+/* Grid */
+.pcx-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.pcx-grid-2 {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+}
+
+@media (max-width: 1024px) {
+  .pcx-grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Cards */
+.pcx-card {
+  background: radial-gradient(circle at top left, #111827 0, #020617 65%, #020617 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(55, 65, 81, 0.7);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+  padding: 18px 20px 20px 20px;
+}
+
+.pcx-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pcx-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pcx-card-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.pcx-card-body {
+  font-size: 13px;
+}
+
+/* Metrics */
+.pcx-metric-card {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #1f2937;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.2));
+}
+
+.pcx-metric-label {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.pcx-metric-value {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pcx-metric-footnote {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #6b7280;
+  letter-spacing: 0.12em;
+}
+
+/* Pills */
+.pcx-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid #374151;
+  color: #9ca3af;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.pill-neutral {
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+.pill-ok {
+  border-color: #22c55e;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.25);
+}
+
+.pill-error {
+  border-color: #ef4444;
+  color: #fecaca;
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.pill-pending {
+  border-color: #eab308;
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.15);
+}
+
+/* Labels/values */
+.pcx-label {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.pcx-value {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* Section titles */
+.pcx-section-spacer {
+  height: 14px;
+}
+
+.pcx-section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pcx-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Tables */
+.pcx-table-wrapper {
+  border-radius: 14px;
+  border: 1px solid #1f2937;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.pcx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.pcx-table thead {
+  background: #020617;
+}
+
+.pcx-table th,
+.pcx-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #111827;
+  text-align: left;
+}
+
+.pcx-table th {
+  font-weight: 600;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.pcx-table tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.pcx-table tbody tr:hover {
+  background: rgba(55, 65, 81, 0.6);
+}
+
+.pcx-muted {
+  color: #6b7280;
+}
+
+/* Tabs visibility */
+.pcx-tab-panel.hidden {
+  display: none;
+}
+
+/* Toast */
+.pcx-toast {
+  position: fixed;
+  bottom: 18px;
+  right: 24px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.toast-info { border-color: #3b82f6; }
+.toast-success { border-color: #22c55e; }
+.toast-error { border-color: #ef4444; }

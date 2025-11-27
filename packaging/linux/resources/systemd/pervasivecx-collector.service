@@ -1,0 +1,16 @@
+[Unit]
+Description=pervasiveCX Collector Service
+After=network.target pervasivecx-core.service
+
+[Service]
+Type=simple
+User=pervasivecx
+Group=pervasivecx
+EnvironmentFile=-/pervasiveCX_mnt/config/app.env
+ExecStart=/opt/pervasivecx/current/bin/pcx-collector
+Restart=on-failure
+RestartSec=5
+WorkingDirectory=/opt/pervasivecx/current
+
+[Install]
+WantedBy=multi-user.target

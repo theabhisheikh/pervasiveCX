@@ -1,0 +1,9 @@
+/pervasiveCX_mnt/logs/*.log /pervasiveCX_mnt/logs/*/*.log {
+    daily
+    rotate 30
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+}

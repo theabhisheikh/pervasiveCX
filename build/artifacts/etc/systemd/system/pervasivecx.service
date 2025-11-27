@@ -1,0 +1,15 @@
+[Unit]
+Description=pervasiveCX unified service (web + API + collector orchestrator)
+After=network.target postgresql-14.service
+
+[Service]
+Type=simple
+User=pervasivecx
+Group=pervasivecx
+EnvironmentFile=/pervasiveCX_mnt/config/app.env
+ExecStart=/opt/pervasivecx/current/bin/pcx-app
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+APP_USER="pervasivecx"
+LOG_BASE="/pervasiveCX_mnt/logs"
+CORE_SERVICE="pervasivecx-core"
+COLLECTOR_SERVICE="pervasivecx-collector"
+CORE_PORT="${PCX_CORE_PORT:-9494}"
+
+usage() {
+  cat <<EOT
+pcxctl - pervasiveCX control tool
+
+Usage:
+  pcxctl service <core|collector|all> <start|stop|restart|status>
+  pcxctl capture <full|metrics|config>
+  pcxctl logs <core|collector|all> [follow]
+  pcxctl status
+
+Examples:
+  pcxctl service core start
+  pcxctl capture full
+  pcxctl logs core follow
+EOT
+  exit 1
+}
+
+ensure_systemd() {
+  if ! command -v systemctl >/dev/null 2>&1; then
+    echo "systemctl not found; systemd is required."
+    exit 1
+  fi
+}
+
+cmd_service() {
+  ensure_systemd
+  local target="${1:-}"
+  local action="${2:-}"
+  if [[ -z "$target" || -z "$action" ]]; then usage; fi
+
+  case "$target" in
+    core)
+      systemctl "$action" "$CORE_SERVICE"
+      ;;
+    collector)
+      systemctl "$action" "$COLLECTOR_SERVICE"
+      ;;
+    all)
+      systemctl "$action" "$CORE_SERVICE"
+      systemctl "$action" "$COLLECTOR_SERVICE"
+      ;;
+    *)
+      echo "Unknown service target: $target"
+      exit 1
+      ;;
+  esac
+}
+
+cmd_capture() {
+  local mode="${1:-full}"
+  local endpoint="/api/admin/capture"
+  case "$mode" in
+    full)      endpoint="$endpoint/full" ;;
+    metrics)   endpoint="$endpoint/metrics" ;;
+    config)    endpoint="$endpoint/config" ;;
+    *) echo "Unknown capture mode: $mode"; exit 1 ;;
+  esac
+
+  echo "Triggering capture ($mode)..."
+  curl -fsS "http://127.0.0.1:${CORE_PORT}${endpoint}" || {
+    echo "Capture request failed."
+    exit 1
+  }
+  echo
+}
+
+cmd_logs() {
+  local what="${1:-core}"
+  local follow="${2:-}"
+  local tail_cmd="tail"
+  if [[ "$follow" == "follow" ]]; then
+    tail_cmd="tail -f"
+  fi
+
+  case "$what" in
+    core)
+      $tail_cmd "$LOG_BASE/core/pervasiveCX-server.log"
+      ;;
+    collector)
+      $tail_cmd "$LOG_BASE/core/pervasiveCX-collector.log"
+      ;;
+    all)
+      $tail_cmd "$LOG_BASE/core/pervasiveCX-server.log" \
+                "$LOG_BASE/core/pervasiveCX-collector.log"
+      ;;
+    *)
+      echo "Unknown logs target: $what"
+      exit 1
+      ;;
+  esac
+}
+
+cmd_status() {
+  ensure_systemd
+  echo "== pervasiveCX services =="
+  systemctl status "$CORE_SERVICE" --no-pager || true
+  echo
+  systemctl status "$COLLECTOR_SERVICE" --no-pager || true
+}
+
+main() {
+  local cmd="${1:-}"
+  shift || true
+
+  case "$cmd" in
+    service) cmd_service "$@";;
+    capture) cmd_capture "$@";;
+    logs)    cmd_logs "$@";;
+    status)  cmd_status "$@";;
+    ""|help|-h|--help) usage;;
+    *) echo "Unknown command: $cmd"; usage;;
+  esac
+}
+
+main "$@"

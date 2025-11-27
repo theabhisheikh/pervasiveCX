@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+LOG_FILE="/pervasiveCX_mnt/logs/core/pervasiveCX-server.log"
+mkdir -p "$(dirname "$LOG_FILE")"
+echo "$(date) - starting DUMMY pervasiveCX core (no real backend yet)" >> "$LOG_FILE"
+while true; do
+  echo "$(date) - core heartbeat" >> "$LOG_FILE"
+  sleep 60
+done

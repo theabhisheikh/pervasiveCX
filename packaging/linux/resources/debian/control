@@ -1,0 +1,10 @@
+Package: pervasivecx
+Version: @VERSION@
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: pervasiveCX Admin <admin@example.com>
+Depends: openjdk-17-jre-headless, adduser, logrotate, curl
+Description: pervasiveCX server information and metrics collector
+ pervasiveCX collects and organizes server, metrics, and contact center
+ data, exposing it via a modern web interface.

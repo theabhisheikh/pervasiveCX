@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -e
+
+APP_USER="pervasivecx"
+APP_GROUP="pervasivecx"
+RUNTIME_BASE="/pervasiveCX_mnt"
+APP_BASE="/opt/pervasivecx"
+
+if ! id -u "${APP_USER}" >/dev/null 2>&1; then
+  adduser --system --group --home "${RUNTIME_BASE}" "${APP_USER}"
+fi
+
+mkdir -p "${RUNTIME_BASE}/config" \
+         "${RUNTIME_BASE}/logs" \
+         "${RUNTIME_BASE}/data/reports" \
+         "${RUNTIME_BASE}/data/snapshots" \
+         "${RUNTIME_BASE}/runtime/pid" \
+         "${RUNTIME_BASE}/runtime/tmp" \
+         "${RUNTIME_BASE}/backups/config" \
+         "${RUNTIME_BASE}/backups/db"
+
+chown -R "${APP_USER}:${APP_GROUP}" "${RUNTIME_BASE}"
+
+if [ ! -f "${RUNTIME_BASE}/config/app.yaml" ]; then
+  VERSION_DIR=$(ls -1 "${APP_BASE}" | grep pervasivecx- | head -n1 || true)
+  if [ -n "$VERSION_DIR" ]; then
+    cp "${APP_BASE}/${VERSION_DIR}/config-defaults/"*.yaml "${RUNTIME_BASE}/config/" || true
+    chown "${APP_USER}:${APP_GROUP}" "${RUNTIME_BASE}/config/"*.yaml || true
+  fi
+fi
+
+LATEST_VERSION=$(ls -1 "${APP_BASE}" | grep pervasivecx- | sort --version-sort | tail -n1 || true)
+if [ -n "$LATEST_VERSION" ]; then
+  ln -sfn "${APP_BASE}/${LATEST_VERSION}" "${APP_BASE}/current"
+fi
+
+if command -v systemctl >/dev/null 2>&1; then
+  systemctl daemon-reload
+  systemctl enable pervasivecx-core.service
+  systemctl enable pervasivecx-collector.service
+fi
+
+echo "pervasiveCX installation complete."

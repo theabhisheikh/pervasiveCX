@@ -1,0 +1,9 @@
+server:
+  port: 9494
+
+pervasivecx:
+  instanceName: "default-instance"
+  environment: "dev"
+
+logging:
+  config: "/pervasiveCX_mnt/config/logging.yaml"

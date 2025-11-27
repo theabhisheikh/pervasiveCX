@@ -1,0 +1,2012 @@
+-- Logs begin at Thu 2025-11-27 14:26:00 IST, end at Thu 2025-11-27 17:22:49 IST. --
+Nov 27 16:10:10 secondary sudo[13914]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:10 secondary sudo[13984]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'ALTER TABLE capture_session OWNER TO pervasivecx;'[0m
+Nov 27 16:10:10 secondary sudo[13984]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:11 secondary sudo[13984]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:11 secondary sudo[14010]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'ALTER TABLE server OWNER TO pervasivecx;'[0m
+Nov 27 16:10:11 secondary sudo[14010]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:11 secondary sudo[14010]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:11 secondary sudo[14036]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'ALTER TABLE server_volume OWNER TO pervasivecx;'[0m
+Nov 27 16:10:11 secondary sudo[14036]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:11 secondary sudo[14036]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:11 secondary sudo[14106]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO pervasivecx;'[0m
+Nov 27 16:10:11 secondary sudo[14106]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:11 secondary sudo[14106]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:11 secondary sudo[14132]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO pervasivecx;'[0m
+Nov 27 16:10:11 secondary sudo[14132]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:12 secondary sudo[14132]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:12 secondary sudo[14203]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO pervasivecx;'[0m
+Nov 27 16:10:12 secondary sudo[14203]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:12 secondary sudo[14203]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:12 secondary sudo[14229]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO pervasivecx;'[0m
+Nov 27 16:10:12 secondary sudo[14229]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:10:12 secondary sudo[14229]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:10:16 secondary sudo[14255]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=pervasivecx ; COMMAND=/bin/env PGPASSWORD=Pcx@123! psql -h 127.0.0.1 -p 5432 -U pervasivecx -d pervasivecx -c 'SELECT 1;'[0m
+Nov 27 16:10:16 secondary sudo[14255]: pam_unix(sudo:session): session opened for user pervasivecx by root(uid=0)
+Nov 27 16:10:16 secondary sudo[14255]: pam_unix(sudo:session): session closed for user pervasivecx
+Nov 27 16:10:21 secondary sudo[14281]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=pervasivecx ; COMMAND=/bin/env PGPASSWORD=Pcx@123! psql -h 127.0.0.1 -p 5432 -U pervasivecx -d pervasivecx -c 'SELECT count(*) FROM capture_session;'[0m
+Nov 27 16:10:21 secondary sudo[14281]: pam_unix(sudo:session): session opened for user pervasivecx by root(uid=0)
+Nov 27 16:10:21 secondary sudo[14281]: pam_unix(sudo:session): session closed for user pervasivecx
+Nov 27 16:10:33 secondary sudo[14308]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-collector[0m
+Nov 27 16:10:33 secondary sudo[14308]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:10:33 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:10:33 secondary pcx-collector[14368]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:33 secondary pcx-collector[14368]: LINE 13: INSERT 0 1,
+Nov 27 16:10:33 secondary pcx-collector[14368]:          ^
+Nov 27 16:10:33 secondary pcx-collector[14376]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:33 secondary pcx-collector[14376]: LINE 13: INSERT 0 1,
+Nov 27 16:10:33 secondary pcx-collector[14376]:          ^
+Nov 27 16:10:33 secondary pcx-collector[14384]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:33 secondary pcx-collector[14384]: LINE 13: INSERT 0 1,
+Nov 27 16:10:33 secondary pcx-collector[14384]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14392]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14392]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14392]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14400]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14400]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14400]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14408]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14408]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14408]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14416]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14416]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14416]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14424]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14424]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14424]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14432]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14432]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14432]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14440]: ERROR:  syntax error at or near "INSERT"
+Nov 27 16:10:34 secondary pcx-collector[14440]: LINE 13: INSERT 0 1,
+Nov 27 16:10:34 secondary pcx-collector[14440]:          ^
+Nov 27 16:10:34 secondary pcx-collector[14443]: ERROR:  invalid input syntax for type uuid: "5122f492-5645-4660-b6f5-cf4daaa1544d
+Nov 27 16:10:34 secondary pcx-collector[14443]: INSERT 0 1"
+Nov 27 16:10:34 secondary pcx-collector[14443]: LINE 3: WHERE id = '5122f492-5645-4660-b6f5-cf4daaa1544d
+Nov 27 16:10:34 secondary pcx-collector[14443]:                    ^
+Nov 27 16:10:34 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:10:34 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:10:34 secondary sudo[14308]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:10:34 secondary sudo[14471]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:10:34 secondary sudo[14471]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:10:34 secondary sudo[14471]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:10:39 secondary sudo[14497]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:10:39 secondary sudo[14497]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:10:39 secondary sudo[14497]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:10:46 secondary sudo[14523]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/journalctl -u pervasivecx-collector -n 20 --no-pager[0m
+Nov 27 16:10:46 secondary sudo[14523]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:10:46 secondary sudo[14523]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:15:53 secondary sssd_kcm[13803]: Shutting down (status = 0)
+Nov 27 16:15:53 secondary systemd[1]: sssd-kcm.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sssd-kcm.service has successfully entered the 'dead' state.
+Nov 27 16:17:19 secondary sudo[14629]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tee /opt/pervasivecx/current/bin/pcx-collector[0m
+Nov 27 16:17:19 secondary sudo[14629]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:17:19 secondary sudo[14629]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:17:19 secondary sudo[14676]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chmod +x /opt/pervasivecx/current/bin/pcx-collector[0m
+Nov 27 16:17:19 secondary sudo[14676]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:17:19 secondary sudo[14676]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:17:28 secondary sudo[14701]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-collector[0m
+Nov 27 16:17:28 secondary sudo[14701]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:17:28 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:17:28 secondary systemd[1]: Starting SSSD Kerberos Cache Manager...
+-- Subject: Unit sssd-kcm.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has begun starting up.
+Nov 27 16:17:28 secondary systemd[1]: Started SSSD Kerberos Cache Manager.
+-- Subject: Unit sssd-kcm.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:17:28 secondary sssd_kcm[14715]: Starting up
+Nov 27 16:17:29 secondary pcx-collector[14773]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14781]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14789]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14797]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14805]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14813]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14821]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14829]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14837]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14845]: INSERT 0 1
+Nov 27 16:17:29 secondary pcx-collector[14848]: UPDATE 1
+Nov 27 16:17:29 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:17:29 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:17:29 secondary sudo[14701]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:17:29 secondary sudo[14874]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:17:29 secondary sudo[14874]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:17:29 secondary sudo[14874]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:17:29 secondary sudo[14900]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tail -n 30 /pervasiveCX_mnt/logs/core/pervasiveCX-collector.log[0m
+Nov 27 16:17:30 secondary sudo[14900]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:17:30 secondary sudo[14900]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:17:30 secondary sudo[14925]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT id, started_at, ended_at, status FROM capture_session ORDER BY started_at DESC LIMIT 5;'[0m
+Nov 27 16:17:30 secondary sudo[14925]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:17:30 secondary sudo[14925]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:17:44 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:17:44 secondary pcx-collector[15017]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15025]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15033]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15041]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15049]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15057]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15065]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15073]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15081]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15089]: INSERT 0 1
+Nov 27 16:17:44 secondary pcx-collector[15092]: UPDATE 1
+Nov 27 16:17:44 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:17:44 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:18:17 secondary sudo[15154]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tail -n 30 /pervasiveCX_mnt/logs/core/pervasiveCX-collector.log[0m
+Nov 27 16:18:17 secondary sudo[15154]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:18:17 secondary sudo[15154]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:18:27 secondary sudo[15179]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:18:27 secondary sudo[15179]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:18:27 secondary sudo[15179]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:18:34 secondary sudo[15272]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl start pervasivecx-collector[0m
+Nov 27 16:18:34 secondary sudo[15272]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:18:34 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:18:34 secondary pcx-collector[15340]: INSERT 0 1
+Nov 27 16:18:34 secondary pcx-collector[15348]: INSERT 0 1
+Nov 27 16:18:34 secondary pcx-collector[15356]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15364]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15372]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15380]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15388]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15396]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15404]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15412]: INSERT 0 1
+Nov 27 16:18:35 secondary pcx-collector[15415]: UPDATE 1
+Nov 27 16:18:35 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:18:35 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:18:35 secondary sudo[15272]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:18:36 secondary sudo[15443]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:18:36 secondary sudo[15443]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:18:36 secondary sudo[15443]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:20:00 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 16:20:00 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 16:20:00 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:20:00 secondary sudo[15475]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT id, started_at, ended_at, status, trigger_type, triggered_by FROM capture_session ORDER BY started_at DESC LIMIT 5;'[0m
+Nov 27 16:20:00 secondary sudo[15475]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:20:00 secondary sudo[15475]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:20:10 secondary sudo[15506]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT server_id, mount_point, total_gb, used_gb, usage_percent#012 FROM server_volume#012 ORDER BY id DESC#012 LIMIT 10;'[0m
+Nov 27 16:20:10 secondary sudo[15506]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:20:10 secondary sudo[15506]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:23:08 secondary sudo[15547]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:23:08 secondary sudo[15547]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:23:08 secondary sudo[15547]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:23:14 secondary sudo[15574]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl start pervasivecx-collector[0m
+Nov 27 16:23:14 secondary sudo[15574]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:23:14 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:23:15 secondary pcx-collector[15642]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15650]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15658]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15666]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15674]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15682]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15690]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15698]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15706]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15714]: INSERT 0 1
+Nov 27 16:23:15 secondary pcx-collector[15717]: UPDATE 1
+Nov 27 16:23:15 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:23:15 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:23:15 secondary sudo[15574]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:23:16 secondary sudo[15743]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:23:16 secondary sudo[15743]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:23:16 secondary sudo[15743]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:23:40 secondary sudo[15770]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:23:40 secondary sudo[15770]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:23:40 secondary sudo[15770]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:24:50 secondary sudo[16068]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/export[0m
+Nov 27 16:24:50 secondary sudo[16068]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:24:50 secondary sudo[16068]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:24:50 secondary sudo[16093]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown pervasivecx:pervasivecx /pervasiveCX_mnt/export[0m
+Nov 27 16:24:50 secondary sudo[16093]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:24:50 secondary sudo[16093]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:25:29 secondary sudo[16285]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/pg_dump -d pervasivecx --data-only --table=capture_session --table=server --table=server_volume --table=rpm_package --table=nas_connection --table=ftp_connection --table=db_snapshot --table=license_snapshot --table=app_module --table=media_profile --table=crm_integration --table=customization --table=custom_report --table=campaign --table=qa_parameter --table=rule_engine --table=metric_definition --table=metric_timeseries[0m
+Nov 27 16:25:29 secondary sudo[16285]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:25:29 secondary sudo[16285]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:25:30 secondary sudo[16360]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/pg_dump -d pervasivecx --data-only --table=capture_session --table=server --table=server_volume --table=rpm_package --table=nas_connection --table=ftp_connection --table=db_snapshot --table=license_snapshot --table=app_module --table=media_profile --table=crm_integration --table=customization --table=custom_report --table=campaign --table=qa_parameter --table=rule_engine --table=metric_definition --table=metric_timeseries[0m
+Nov 27 16:25:30 secondary sudo[16360]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:25:30 secondary sudo[16360]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:26:23 secondary sudo[16530]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT count(*) FROM capture_session;'[0m
+Nov 27 16:26:23 secondary sudo[16530]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:26:23 secondary sudo[16530]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:26:23 secondary sudo[16556]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT count(*) FROM server;'[0m
+Nov 27 16:26:23 secondary sudo[16556]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:26:23 secondary sudo[16556]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:26:23 secondary sudo[16582]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT count(*) FROM server_volume;'[0m
+Nov 27 16:26:23 secondary sudo[16582]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:26:23 secondary sudo[16582]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:26:30 secondary sudo[16608]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/reports[0m
+Nov 27 16:26:30 secondary sudo[16608]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:26:30 secondary sudo[16608]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:26:30 secondary sudo[16633]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown -R pervasivecx:pervasivecx /pervasiveCX_mnt/reports[0m
+Nov 27 16:26:30 secondary sudo[16633]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:26:30 secondary sudo[16633]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:26:45 secondary sudo[16796]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT id, code, hostname, environment, os_name, os_version, cpu_cores, ram_mb, created_at, updated_at   FROM server   ORDER BY code ) TO \'/pervasiveCX_mnt/reports/report_20251127_162645/servers.csv\' CSV HEADER;'[0m
+Nov 27 16:26:45 secondary sudo[16796]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:26:45 secondary sudo[16796]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:28:01 secondary anacron[9714]: [0;1;39m[0;1;31m[0;1;39mJob `cron.weekly' started[0m
+Nov 27 16:28:01 secondary anacron[9714]: [0;1;39m[0;1;31m[0;1;39mJob `cron.weekly' terminated[0m
+Nov 27 16:28:01 secondary anacron[9714]: [0;1;39m[0;1;31m[0;1;39mNormal exit (2 jobs run)[0m
+Nov 27 16:28:44 secondary sudo[17111]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/reports[0m
+Nov 27 16:28:44 secondary sudo[17111]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17111]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:28:44 secondary sudo[17114]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/reports/report_20251127_162844[0m
+Nov 27 16:28:44 secondary sudo[17114]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17114]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:28:44 secondary sudo[17117]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown postgres:postgres /pervasiveCX_mnt/reports/report_20251127_162844[0m
+Nov 27 16:28:44 secondary sudo[17117]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17117]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:28:44 secondary sudo[17120]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chmod 770 /pervasiveCX_mnt/reports/report_20251127_162844[0m
+Nov 27 16:28:44 secondary sudo[17120]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17120]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:28:44 secondary sudo[17123]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT id, code, hostname, environment, os_name, os_version, cpu_cores, ram_mb, created_at, updated_at   FROM server   ORDER BY code ) TO \'/pervasiveCX_mnt/reports/report_20251127_162844/servers.csv\' CSV HEADER;'[0m
+Nov 27 16:28:44 secondary sudo[17123]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17123]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:28:44 secondary sudo[17127]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT id, started_at, ended_at, status, trigger_type, triggered_by, notes   FROM capture_session   ORDER BY started_at DESC   LIMIT 200 ) TO \'/pervasiveCX_mnt/reports/report_20251127_162844/capture_sessions.csv\' CSV HEADER;'[0m
+Nov 27 16:28:44 secondary sudo[17127]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17127]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:28:44 secondary sudo[17131]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT s.code AS server_code, v.mount_point, v.filesystem_type,          v.total_gb, v.used_gb, v.available_gb, v.usage_percent, v.captured_at   FROM server_volume v   JOIN server s ON s.id = v.server_id   ORDER BY s.code, v.mount_point ) TO \'/pervasiveCX_mnt/reports/report_20251127_162844/volumes.csv\' CSV HEADER;'[0m
+Nov 27 16:28:44 secondary sudo[17131]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:28:44 secondary sudo[17131]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:29:20 secondary sudo[17339]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:29:20 secondary sudo[17339]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:29:20 secondary sudo[17339]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:29:22 secondary sudo[17431]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:29:22 secondary sudo[17431]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:29:22 secondary sudo[17431]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:29:31 secondary sudo[17457]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl start pervasivecx-collector[0m
+Nov 27 16:29:31 secondary sudo[17457]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:29:31 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:29:31 secondary pcx-collector[17525]: INSERT 0 1
+Nov 27 16:29:31 secondary pcx-collector[17533]: INSERT 0 1
+Nov 27 16:29:31 secondary pcx-collector[17541]: INSERT 0 1
+Nov 27 16:29:31 secondary pcx-collector[17549]: INSERT 0 1
+Nov 27 16:29:31 secondary pcx-collector[17557]: INSERT 0 1
+Nov 27 16:29:31 secondary pcx-collector[17565]: INSERT 0 1
+Nov 27 16:29:32 secondary pcx-collector[17573]: INSERT 0 1
+Nov 27 16:29:32 secondary pcx-collector[17581]: INSERT 0 1
+Nov 27 16:29:32 secondary pcx-collector[17589]: INSERT 0 1
+Nov 27 16:29:32 secondary pcx-collector[17597]: INSERT 0 1
+Nov 27 16:29:32 secondary pcx-collector[17600]: UPDATE 1
+Nov 27 16:29:32 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:29:32 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:29:32 secondary sudo[17457]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:29:33 secondary sudo[17629]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:29:33 secondary sudo[17629]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:29:33 secondary sudo[17629]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:00 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 16:30:00 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 16:30:00 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:30:04 secondary sudo[17795]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/reports[0m
+Nov 27 16:30:04 secondary sudo[17795]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17795]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:04 secondary sudo[17798]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/reports/report_20251127_163004[0m
+Nov 27 16:30:04 secondary sudo[17798]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17798]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:04 secondary sudo[17801]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown postgres:postgres /pervasiveCX_mnt/reports/report_20251127_163004[0m
+Nov 27 16:30:04 secondary sudo[17801]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17801]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:04 secondary sudo[17804]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chmod 770 /pervasiveCX_mnt/reports/report_20251127_163004[0m
+Nov 27 16:30:04 secondary sudo[17804]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17804]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:04 secondary sudo[17807]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT id, code, hostname, environment, os_name, os_version, cpu_cores, ram_mb, created_at, updated_at   FROM server   ORDER BY code ) TO \'/pervasiveCX_mnt/reports/report_20251127_163004/servers.csv\' CSV HEADER;'[0m
+Nov 27 16:30:04 secondary sudo[17807]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17807]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:30:04 secondary sudo[17811]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT id, started_at, ended_at, status, trigger_type, triggered_by, notes   FROM capture_session   ORDER BY started_at DESC   LIMIT 200 ) TO \'/pervasiveCX_mnt/reports/report_20251127_163004/capture_sessions.csv\' CSV HEADER;'[0m
+Nov 27 16:30:04 secondary sudo[17811]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17811]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:30:04 secondary sudo[17815]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c '\\COPY (   SELECT s.code AS server_code, v.mount_point, v.filesystem_type,          v.total_gb, v.used_gb, v.available_gb, v.usage_percent   FROM server_volume v   JOIN server s ON s.id = v.server_id   ORDER BY s.code, v.mount_point ) TO \'/pervasiveCX_mnt/reports/report_20251127_163004/volumes.csv\' CSV HEADER;'[0m
+Nov 27 16:30:04 secondary sudo[17815]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17815]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:30:04 secondary sudo[17819]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/bash -c 'cat > \'/pervasiveCX_mnt/reports/report_20251127_163004/index.html\''[0m
+Nov 27 16:30:04 secondary sudo[17819]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17819]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:30:04 secondary sudo[17823]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown -R pervasivecx:pervasivecx /pervasiveCX_mnt/reports/report_20251127_163004[0m
+Nov 27 16:30:04 secondary sudo[17823]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:30:04 secondary sudo[17823]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:31:37 secondary sudo[17928]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT id, started_at, ended_at, status FROM capture_session ORDER BY started_at DESC LIMIT 5;'[0m
+Nov 27 16:31:37 secondary sudo[17928]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:31:37 secondary sudo[17928]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:32:11 secondary sudo[17957]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-collector[0m
+Nov 27 16:32:11 secondary sudo[17957]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:32:11 secondary sudo[17957]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:32:42 secondary sudo[17985]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 16:32:42 secondary sudo[17985]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:32:43 secondary sudo[17985]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:32:49 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:32:49 secondary pcx-collector[18076]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18084]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18092]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18100]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18108]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18116]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18124]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18132]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18140]: INSERT 0 1
+Nov 27 16:32:49 secondary pcx-collector[18148]: INSERT 0 1
+Nov 27 16:32:50 secondary pcx-collector[18151]: UPDATE 1
+Nov 27 16:32:50 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:32:50 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:37:01 secondary CROND[18182]: (root) CMD (run-parts /etc/cron.weekly)
+Nov 27 16:37:01 secondary CROND[18183]: (root) CMD (run-parts /etc/cron.daily)
+Nov 27 16:37:01 secondary CROND[18184]: (root) CMD (run-parts /etc/cron.monthly)
+Nov 27 16:37:01 secondary CROND[18185]: (root) CMD (run-parts /etc/cron.hourly)
+Nov 27 16:37:01 secondary run-parts[18191]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.daily) starting ameyoCore[0m
+Nov 27 16:37:01 secondary run-parts[18193]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) starting 0anacron[0m
+Nov 27 16:37:01 secondary run-parts[18211]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) finished 0anacron[0m
+Nov 27 16:37:01 secondary run-parts[18219]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) starting ameyoCore[0m
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (/etc/cron.hourly/ameyoCore:)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT ()
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Directory /dacx/djinn non-existent)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (/etc/cron.hourly/ameyoCore: line 13: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (CORE TYPE-core)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (ls: cannot access '/dacx/djinn': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (CORE TYPE-nohup)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Directory /dacx/ameyo non-existent)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (/etc/cron.hourly/ameyoCore: line 13: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (CORE TYPE-nohup)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (ls: cannot access '/dacx/ameyo': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Directory /dacx/ameyo/asterisks/1.6 non-existent)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (/etc/cron.hourly/ameyoCore: line 13: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (CORE TYPE-nohup)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/asterisks/1.6': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Directory /dacx/ameyo/amds/1.6 non-existent)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (/etc/cron.hourly/ameyoCore: line 13: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (CORE TYPE-nohup)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/amds/1.6': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18181]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary run-parts[18270]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) finished ameyoCore[0m
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore:)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT ()
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/var/core non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-asterisk)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/var/core': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/var/core non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-server)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/var/core': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/com.drishti.dacx.server.product/workspace non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-dumpmx)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/com.drishti.dacx.server.product/workspace': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/ameyo.voicelogger.product/workspace non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-dumpmx)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/ameyo.voicelogger.product/workspace': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/ameyo/ameyo.voicelogger.product/workspace non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-dumpmx)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/ameyo.voicelogger.product/workspace': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/ameyo.archiver.voicelog.product/workspace non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-dumpmx)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/ameyo.archiver.voicelog.product/workspace': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/ameyo/ameyo.reports.product/workspace non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-dumpmx)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/ameyo.reports.product/workspace': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/ameyo/com.drishti.dacx.server.product non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-heap)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/com.drishti.dacx.server.product': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/ameyo/ameyo.voicelogger.product,/dacx/ameyo/ameyo.archiver.voicelog.product non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-heap)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/ameyo.voicelogger.product,/dacx/ameyo/ameyo.archiver.voicelog.product': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/ameyo/ameyo.reports.product non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-heap)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/ameyo/ameyo.reports.product': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /var/spool/clientmqueue non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-mqueue)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/var/spool/clientmqueue': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Directory /dacx/var/ameyo/dacxdata/acp/databasebackup non-existent)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/ameyoCore: line 22: continue: only meaningful in a `for', `while', or `until' loop)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-backup)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (ls: cannot access '/dacx/var/ameyo/dacxdata/acp/databasebackup': No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary run-parts[18277]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) starting logrotate[0m
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (CORE TYPE-core)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (TOTAL COUNT-0)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (Oops! Something went wrong, Please retry)
+Nov 27 16:37:01 secondary run-parts[18285]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.daily) finished ameyoCore[0m
+Nov 27 16:37:01 secondary run-parts[18287]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.daily) starting logrotate[0m
+Nov 27 16:37:01 secondary run-parts[18292]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.hourly) finished logrotate[0m
+Nov 27 16:37:01 secondary logrotate[18293]: [0;1;39m[0;1;31m[0;1;39mALERT exited abnormally with [1][0m
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (/etc/cron.daily/logrotate:)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT ()
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (error: stat of /dacx/var/ameyo/dacxdata/asterisks/13/var/log/asterisk failed: No such file or directory)
+Nov 27 16:37:01 secondary CROND[18180]: (root) CMDOUT (error: stat of /dacx/var/ameyo/dacxdata/asterisks/13/var/log/asterisk failed: No such file or directory)
+Nov 27 16:37:01 secondary run-parts[18295]: [0;1;39m[0;1;31m[0;1;39m(/etc/cron.daily) finished logrotate[0m
+Nov 27 16:39:58 secondary sssd_kcm[14715]: Shutting down (status = 0)
+Nov 27 16:39:59 secondary systemd[1]: sssd-kcm.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sssd-kcm.service has successfully entered the 'dead' state.
+Nov 27 16:40:01 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 16:40:01 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 16:40:01 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:41:27 secondary sudo[18324]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/bash -c 'cat >> /pervasiveCX_mnt/config/app.env'[0m
+Nov 27 16:41:27 secondary sudo[18324]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:27 secondary sudo[18324]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:27 secondary sudo[18372]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown pervasivecx:pervasivecx /pervasiveCX_mnt/config/app.env[0m
+Nov 27 16:41:27 secondary sudo[18372]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:27 secondary sudo[18372]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:45 secondary sudo[18398]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tee /opt/pervasivecx/current/lib/pcx_web_server.py[0m
+Nov 27 16:41:45 secondary sudo[18398]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:45 secondary sudo[18398]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:45 secondary sudo[18445]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chmod +x /opt/pervasivecx/current/lib/pcx_web_server.py[0m
+Nov 27 16:41:45 secondary sudo[18445]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:45 secondary sudo[18445]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:49 secondary sudo[18470]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 16:41:49 secondary sudo[18470]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:49 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 16:41:49 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 16:41:49 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:41:49 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:41:49 secondary sudo[18470]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:50 secondary sudo[18500]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 16:41:50 secondary sudo[18500]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:41:50 secondary sudo[18500]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:41:56 secondary systemd[1]: Starting SSSD Kerberos Cache Manager...
+-- Subject: Unit sssd-kcm.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has begun starting up.
+Nov 27 16:41:56 secondary systemd[1]: Started SSSD Kerberos Cache Manager.
+-- Subject: Unit sssd-kcm.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:41:56 secondary sssd_kcm[18541]: Starting up
+Nov 27 16:41:56 secondary PackageKit[4828]: [0;2;37m[0;1;31m[0;2;37msearch-file transaction /21_aebbedba from uid 0 finished with success after 297ms[0m
+Nov 27 16:46:56 secondary sssd_kcm[18541]: Shutting down (status = 0)
+Nov 27 16:46:56 secondary systemd[1]: sssd-kcm.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sssd-kcm.service has successfully entered the 'dead' state.
+Nov 27 16:47:31 secondary sudo[18664]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 16:47:31 secondary sudo[18664]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:47:31 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 16:47:31 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 16:47:31 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:47:31 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:47:31 secondary sudo[18664]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:48:29 secondary systemd[1]: Starting SSSD Kerberos Cache Manager...
+-- Subject: Unit sssd-kcm.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has begun starting up.
+Nov 27 16:48:29 secondary systemd[1]: Started SSSD Kerberos Cache Manager.
+-- Subject: Unit sssd-kcm.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:48:29 secondary sssd_kcm[18845]: Starting up
+Nov 27 16:48:31 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:48:32 secondary pcx-collector[18917]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18925]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18933]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18941]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18949]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18957]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18965]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18973]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18981]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18989]: INSERT 0 1
+Nov 27 16:48:32 secondary pcx-collector[18992]: UPDATE 1
+Nov 27 16:48:32 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:48:32 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:48:41 secondary sudo[19005]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT id, started_at, ended_at, status FROM capture_session ORDER BY started_at DESC LIMIT 5;'[0m
+Nov 27 16:48:41 secondary sudo[19005]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:48:41 secondary sudo[19005]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:48:41 secondary sudo[19053]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT id, code, hostname FROM server;'[0m
+Nov 27 16:48:41 secondary sudo[19053]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:48:41 secondary sudo[19053]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:48:42 secondary sudo[19101]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'SELECT server_id, mount_point, total_gb, used_gb FROM server_volume ORDER BY id DESC LIMIT 10;'[0m
+Nov 27 16:48:42 secondary sudo[19101]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:48:42 secondary sudo[19101]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:50:01 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 16:50:01 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 16:50:01 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:50:06 secondary sudo[19238]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tee /pervasiveCX_mnt/config/app.env[0m
+Nov 27 16:50:06 secondary sudo[19238]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:50:06 secondary sudo[19238]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:50:06 secondary sudo[19285]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/chown pervasivecx:pervasivecx /pervasiveCX_mnt/config/app.env[0m
+Nov 27 16:50:06 secondary sudo[19285]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:50:06 secondary sudo[19285]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:50:11 secondary sudo[19310]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 16:50:11 secondary sudo[19310]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:50:11 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 16:50:11 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 16:50:11 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:50:11 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:50:11 secondary sudo[19310]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:50:11 secondary sudo[19340]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 16:50:11 secondary sudo[19340]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:50:11 secondary sudo[19340]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:50:30 secondary sudo[19489]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'UPDATE server SET code = \'SRV_SECONDARY\' WHERE id = 1;'[0m
+Nov 27 16:50:30 secondary sudo[19489]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:50:30 secondary sudo[19489]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:50:30 secondary sudo[19537]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/1 ; PWD=/root/pervasivecx ; USER=postgres ; COMMAND=/bin/psql -d pervasivecx -c 'UPDATE server SET code = \'secondary\' WHERE code = \'$(hostname -s)\';'[0m
+Nov 27 16:50:30 secondary sudo[19537]: pam_unix(sudo:session): session opened for user postgres by root(uid=0)
+Nov 27 16:50:30 secondary sudo[19537]: pam_unix(sudo:session): session closed for user postgres
+Nov 27 16:50:39 secondary systemd[1]: Started /usr/bin/systemctl start man-db-cache-update.
+-- Subject: Unit run-re0444c88b7d8478c9ccd7cbef090f3bd.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit run-re0444c88b7d8478c9ccd7cbef090f3bd.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:50:39 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mcgroup compatibility translation between legacy and unified hierarchy settings activated. See cgroup-compat debug messages for details.[0m
+Nov 27 16:50:39 secondary systemd[1]: Starting man-db-cache-update.service...
+-- Subject: Unit man-db-cache-update.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit man-db-cache-update.service has begun starting up.
+Nov 27 16:51:09 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 16:51:09 secondary pcx-collector[46553]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46581]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46611]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46638]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46671]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46702]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46738]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46771]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46807]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46844]: INSERT 0 1
+Nov 27 16:51:09 secondary pcx-collector[46866]: UPDATE 1
+Nov 27 16:51:09 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 16:51:09 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:52:09 secondary systemd[1]: man-db-cache-update.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit man-db-cache-update.service has successfully entered the 'dead' state.
+Nov 27 16:52:09 secondary systemd[1]: Started man-db-cache-update.service.
+-- Subject: Unit man-db-cache-update.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit man-db-cache-update.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:52:09 secondary systemd[1]: run-re0444c88b7d8478c9ccd7cbef090f3bd.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit run-re0444c88b7d8478c9ccd7cbef090f3bd.service has successfully entered the 'dead' state.
+Nov 27 16:52:46 secondary sudo[92527]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tail -n 50 /pervasiveCX_mnt/logs/web/pervasiveCX-web.log[0m
+Nov 27 16:52:46 secondary sudo[92527]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:52:46 secondary sudo[92527]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:56:39 secondary sudo[92688]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 16:56:39 secondary sudo[92688]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:56:39 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 16:56:39 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 16:56:39 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:56:39 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:56:39 secondary sudo[92688]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:57:24 secondary sudo[92745]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 16:57:24 secondary sudo[92745]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:57:24 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 16:57:24 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 16:57:24 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:24 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:57:24 secondary sudo[92745]: pam_unix(sudo:session): session closed for user root
+Nov 27 16:57:24 secondary python3[92750]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 16:57:24 secondary pcx-web[92750]: Traceback (most recent call last):
+Nov 27 16:57:24 secondary pcx-web[92750]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 16:57:24 secondary pcx-web[92750]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 16:57:24 secondary pcx-web[92750]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 16:57:24 secondary pcx-web[92750]:     self.server_bind()
+Nov 27 16:57:24 secondary pcx-web[92750]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 16:57:24 secondary pcx-web[92750]:     self.socket.bind(self.server_address)
+Nov 27 16:57:24 secondary pcx-web[92750]: OSError: [Errno 98] Address already in use
+Nov 27 16:57:24 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 16:57:24 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:24 secondary abrt-server[92776]: [0;1;39m[0;1;31m[0;1;39mDeleting problem directory Python3-2025-11-27-16:57:24-92750 (dup of Python3-2025-11-27-15:38:47-10143)[0m
+Nov 27 16:57:24 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 16:57:24 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 1.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 16:57:24 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:24 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:57:25 secondary dbus-daemon[697]: [system] Activating service name='org.freedesktop.problems' requested by ':1.2026' (uid=0 pid=92783 comm="/usr/libexec/platform-python /usr/bin/abrt-action-") (using servicehelper)
+Nov 27 16:57:25 secondary dbus-daemon[697]: [system] Successfully activated service 'org.freedesktop.problems'
+Nov 27 16:57:25 secondary python3[92784]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 16:57:25 secondary abrt-server[92776]: [0;1;39m[0;1;31m[0;1;39mSending a notification email to: "root@localhost"[0m
+Nov 27 16:57:25 secondary abrt-server[92793]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 16:57:25 secondary pcx-web[92784]: Traceback (most recent call last):
+Nov 27 16:57:25 secondary pcx-web[92784]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 16:57:25 secondary pcx-web[92784]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 16:57:25 secondary pcx-web[92784]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 16:57:25 secondary pcx-web[92784]:     self.server_bind()
+Nov 27 16:57:25 secondary pcx-web[92784]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 16:57:25 secondary pcx-web[92784]:     self.socket.bind(self.server_address)
+Nov 27 16:57:25 secondary pcx-web[92784]: OSError: [Errno 98] Address already in use
+Nov 27 16:57:25 secondary abrt-server[92776]: [0;1;39m[0;1;31m[0;1;39m/usr/sbin/sendmail: No such file or directory[0m
+Nov 27 16:57:25 secondary abrt-server[92776]: [0;1;39m[0;1;31m[0;1;39m. . . message not sent.[0m
+Nov 27 16:57:25 secondary abrt-server[92776]: [0;1;39m[0;1;31m[0;1;39mError running '/bin/mailx'[0m
+Nov 27 16:57:25 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 16:57:25 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:25 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 16:57:25 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 2.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 16:57:25 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:25 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:57:25 secondary python3[92797]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 16:57:25 secondary abrt-server[92799]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 16:57:25 secondary pcx-web[92797]: Traceback (most recent call last):
+Nov 27 16:57:25 secondary pcx-web[92797]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 16:57:25 secondary pcx-web[92797]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 16:57:25 secondary pcx-web[92797]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 16:57:25 secondary pcx-web[92797]:     self.server_bind()
+Nov 27 16:57:25 secondary pcx-web[92797]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 16:57:25 secondary pcx-web[92797]:     self.socket.bind(self.server_address)
+Nov 27 16:57:25 secondary pcx-web[92797]: OSError: [Errno 98] Address already in use
+Nov 27 16:57:25 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 16:57:25 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:25 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 16:57:25 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 3.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 16:57:25 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:25 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:57:26 secondary python3[92801]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 16:57:26 secondary abrt-server[92803]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 16:57:26 secondary pcx-web[92801]: Traceback (most recent call last):
+Nov 27 16:57:26 secondary pcx-web[92801]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 16:57:26 secondary pcx-web[92801]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 16:57:26 secondary pcx-web[92801]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 16:57:26 secondary pcx-web[92801]:     self.server_bind()
+Nov 27 16:57:26 secondary pcx-web[92801]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 16:57:26 secondary pcx-web[92801]:     self.socket.bind(self.server_address)
+Nov 27 16:57:26 secondary pcx-web[92801]: OSError: [Errno 98] Address already in use
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:26 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 16:57:26 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 4.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 16:57:26 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:26 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 16:57:26 secondary python3[92805]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 16:57:26 secondary abrt-server[92807]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 16:57:26 secondary pcx-web[92805]: Traceback (most recent call last):
+Nov 27 16:57:26 secondary pcx-web[92805]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 16:57:26 secondary pcx-web[92805]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 16:57:26 secondary pcx-web[92805]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 16:57:26 secondary pcx-web[92805]:     self.server_bind()
+Nov 27 16:57:26 secondary pcx-web[92805]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 16:57:26 secondary pcx-web[92805]:     self.socket.bind(self.server_address)
+Nov 27 16:57:26 secondary pcx-web[92805]: OSError: [Errno 98] Address already in use
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:26 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 16:57:26 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 5.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 16:57:26 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Start request repeated too quickly.[0m
+Nov 27 16:57:26 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 16:57:26 secondary systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start pervasiveCX Web UI & Capture API.[0m
+-- Subject: Unit pervasivecx-web.service has failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has failed.
+-- 
+-- The result is failed.
+Nov 27 16:58:29 secondary sssd_kcm[18845]: Shutting down (status = 0)
+Nov 27 16:58:29 secondary systemd[1]: sssd-kcm.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sssd-kcm.service has successfully entered the 'dead' state.
+Nov 27 16:59:59 secondary sudo[92961]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tail -n 50 /pervasiveCX_mnt/logs/web/pervasiveCX-web.log[0m
+Nov 27 16:59:59 secondary sudo[92961]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 16:59:59 secondary sudo[92961]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:00:01 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 17:00:01 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 17:00:01 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:00:07 secondary sudo[92991]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 17:00:07 secondary sudo[92991]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:00:07 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:00:07 secondary sudo[92991]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:00:10 secondary systemd[1]: Starting SSSD Kerberos Cache Manager...
+-- Subject: Unit sssd-kcm.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has begun starting up.
+Nov 27 17:00:10 secondary systemd[1]: Started SSSD Kerberos Cache Manager.
+-- Subject: Unit sssd-kcm.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:00:10 secondary sssd_kcm[93022]: Starting up
+Nov 27 17:00:14 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 17:00:14 secondary pcx-collector[93096]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93104]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93112]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93120]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93128]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93136]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93144]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93152]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93160]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93168]: INSERT 0 1
+Nov 27 17:00:14 secondary pcx-collector[93171]: UPDATE 1
+Nov 27 17:00:14 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 17:00:14 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:00:46 secondary sudo[93350]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tail -n 50 /pervasiveCX_mnt/logs/web/pervasiveCX-web.log[0m
+Nov 27 17:00:46 secondary sudo[93350]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:00:46 secondary sudo[93350]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:06:12 secondary systemd[1]: Starting dnf makecache...
+-- Subject: Unit dnf-makecache.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit dnf-makecache.service has begun starting up.
+Nov 27 17:06:12 secondary dnf[93569]: Metadata cache refreshed recently.
+Nov 27 17:06:12 secondary systemd[1]: dnf-makecache.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit dnf-makecache.service has successfully entered the 'dead' state.
+Nov 27 17:06:12 secondary systemd[1]: Started dnf makecache.
+-- Subject: Unit dnf-makecache.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit dnf-makecache.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:06:36 secondary sudo[93644]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/sha256sum /pervasiveCX_mnt/web/js/app.js[0m
+Nov 27 17:06:36 secondary sudo[93644]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:06:36 secondary sudo[93644]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:07:01 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 17:07:01 secondary pcx-collector[93765]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93773]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93781]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93789]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93797]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93805]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93813]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93821]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93829]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93837]: INSERT 0 1
+Nov 27 17:07:01 secondary pcx-collector[93840]: UPDATE 1
+Nov 27 17:07:01 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 17:07:01 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:08:31 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 17:08:31 secondary pcx-collector[93919]: INSERT 0 1
+Nov 27 17:08:31 secondary pcx-collector[93927]: INSERT 0 1
+Nov 27 17:08:31 secondary pcx-collector[93935]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93943]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93951]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93959]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93967]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93975]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93983]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93991]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[93994]: UPDATE 1
+Nov 27 17:08:32 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 17:08:32 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:08:32 secondary systemd[1]: Starting pervasiveCX Collector (one-shot full capture)...
+-- Subject: Unit pervasivecx-collector.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has begun starting up.
+Nov 27 17:08:32 secondary pcx-collector[94064]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94072]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94080]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94088]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94096]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94104]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94112]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94120]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94128]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94136]: INSERT 0 1
+Nov 27 17:08:32 secondary pcx-collector[94139]: UPDATE 1
+Nov 27 17:08:32 secondary systemd[1]: pervasivecx-collector.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-collector.service has successfully entered the 'dead' state.
+Nov 27 17:08:32 secondary systemd[1]: Started pervasiveCX Collector (one-shot full capture).
+-- Subject: Unit pervasivecx-collector.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-collector.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:08:40 secondary sudo[94210]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/cp web/static/index.html /pervasiveCX_mnt/web/index.html[0m
+Nov 27 17:08:40 secondary sudo[94210]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:08:40 secondary sudo[94210]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:10:02 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 17:10:02 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 17:10:02 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:11:29 secondary sudo[94333]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/cp web/static/js/app.js /pervasiveCX_mnt/web/js/app.js[0m
+Nov 27 17:11:29 secondary sudo[94333]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:11:29 secondary sudo[94333]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:14:58 secondary sudo[94524]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 17:14:58 secondary sudo[94524]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:14:58 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 17:14:58 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 17:14:58 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:14:58 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:14:58 secondary sudo[94524]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:14:58 secondary python3[94529]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:14:58 secondary pcx-web[94529]: Traceback (most recent call last):
+Nov 27 17:14:58 secondary pcx-web[94529]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:14:58 secondary pcx-web[94529]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:14:58 secondary pcx-web[94529]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:14:58 secondary pcx-web[94529]:     self.server_bind()
+Nov 27 17:14:58 secondary pcx-web[94529]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:14:58 secondary pcx-web[94529]:     self.socket.bind(self.server_address)
+Nov 27 17:14:58 secondary pcx-web[94529]: OSError: [Errno 98] Address already in use
+Nov 27 17:14:58 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:14:58 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:14:58 secondary abrt-server[94554]: [0;1;39m[0;1;31m[0;1;39mDeleting problem directory Python3-2025-11-27-17:14:58-94529 (dup of Python3-2025-11-27-15:38:47-10143)[0m
+Nov 27 17:14:58 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:14:58 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 1.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:14:58 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:14:58 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:14:59 secondary dbus-daemon[697]: [system] Activating service name='org.freedesktop.problems' requested by ':1.2077' (uid=0 pid=94561 comm="/usr/libexec/platform-python /usr/bin/abrt-action-") (using servicehelper)
+Nov 27 17:14:59 secondary dbus-daemon[697]: [system] Successfully activated service 'org.freedesktop.problems'
+Nov 27 17:14:59 secondary python3[94562]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:14:59 secondary abrt-server[94554]: [0;1;39m[0;1;31m[0;1;39mSending a notification email to: "root@localhost"[0m
+Nov 27 17:14:59 secondary abrt-server[94554]: [0;1;39m[0;1;31m[0;1;39m/usr/sbin/sendmail: No such file or directory[0m
+Nov 27 17:14:59 secondary abrt-server[94554]: [0;1;39m[0;1;31m[0;1;39m. . . message not sent.[0m
+Nov 27 17:14:59 secondary abrt-server[94554]: [0;1;39m[0;1;31m[0;1;39mError running '/bin/mailx'[0m
+Nov 27 17:14:59 secondary abrt-server[94571]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:14:59 secondary pcx-web[94562]: Traceback (most recent call last):
+Nov 27 17:14:59 secondary pcx-web[94562]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:14:59 secondary pcx-web[94562]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:14:59 secondary pcx-web[94562]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:14:59 secondary pcx-web[94562]:     self.server_bind()
+Nov 27 17:14:59 secondary pcx-web[94562]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:14:59 secondary pcx-web[94562]:     self.socket.bind(self.server_address)
+Nov 27 17:14:59 secondary pcx-web[94562]: OSError: [Errno 98] Address already in use
+Nov 27 17:14:59 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:14:59 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:14:59 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:14:59 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 2.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:14:59 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:14:59 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:14:59 secondary python3[94576]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:14:59 secondary abrt-server[94578]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:14:59 secondary pcx-web[94576]: Traceback (most recent call last):
+Nov 27 17:14:59 secondary pcx-web[94576]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:14:59 secondary pcx-web[94576]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:14:59 secondary pcx-web[94576]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:14:59 secondary pcx-web[94576]:     self.server_bind()
+Nov 27 17:14:59 secondary pcx-web[94576]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:14:59 secondary pcx-web[94576]:     self.socket.bind(self.server_address)
+Nov 27 17:14:59 secondary pcx-web[94576]: OSError: [Errno 98] Address already in use
+Nov 27 17:14:59 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:14:59 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 3.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:15:00 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:15:00 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:15:00 secondary python3[94581]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:15:00 secondary abrt-server[94583]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:15:00 secondary pcx-web[94581]: Traceback (most recent call last):
+Nov 27 17:15:00 secondary pcx-web[94581]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:15:00 secondary pcx-web[94581]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:15:00 secondary pcx-web[94581]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:15:00 secondary pcx-web[94581]:     self.server_bind()
+Nov 27 17:15:00 secondary pcx-web[94581]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:15:00 secondary pcx-web[94581]:     self.socket.bind(self.server_address)
+Nov 27 17:15:00 secondary pcx-web[94581]: OSError: [Errno 98] Address already in use
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 4.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:15:00 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:15:00 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:15:00 secondary python3[94585]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:15:00 secondary abrt-server[94587]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:15:00 secondary pcx-web[94585]: Traceback (most recent call last):
+Nov 27 17:15:00 secondary pcx-web[94585]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:15:00 secondary pcx-web[94585]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:15:00 secondary pcx-web[94585]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:15:00 secondary pcx-web[94585]:     self.server_bind()
+Nov 27 17:15:00 secondary pcx-web[94585]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:15:00 secondary pcx-web[94585]:     self.socket.bind(self.server_address)
+Nov 27 17:15:00 secondary pcx-web[94585]: OSError: [Errno 98] Address already in use
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:15:00 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 5.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:15:00 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Start request repeated too quickly.[0m
+Nov 27 17:15:00 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:15:00 secondary systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start pervasiveCX Web UI & Capture API.[0m
+-- Subject: Unit pervasivecx-web.service has failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has failed.
+-- 
+-- The result is failed.
+Nov 27 17:17:40 secondary sssd_kcm[93022]: Shutting down (status = 0)
+Nov 27 17:17:40 secondary systemd[1]: sssd-kcm.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sssd-kcm.service has successfully entered the 'dead' state.
+Nov 27 17:17:52 secondary sudo[94780]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:17:52 secondary sudo[94780]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:17:52 secondary sudo[94780]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:17:57 secondary sudo[94807]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl start pervasivecx-web[0m
+Nov 27 17:17:57 secondary sudo[94807]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:17:57 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:17:57 secondary sudo[94807]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:17:59 secondary sudo[94834]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:17:59 secondary sudo[94834]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:17:59 secondary sudo[94834]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:18:04 secondary systemd[1]: Starting SSSD Kerberos Cache Manager...
+-- Subject: Unit sssd-kcm.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has begun starting up.
+Nov 27 17:18:04 secondary systemd[1]: Started SSSD Kerberos Cache Manager.
+-- Subject: Unit sssd-kcm.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sssd-kcm.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:18:04 secondary sssd_kcm[94886]: Starting up
+Nov 27 17:20:03 secondary systemd[1]: Starting system activity accounting tool...
+-- Subject: Unit sysstat-collect.service has begun start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has begun starting up.
+Nov 27 17:20:03 secondary systemd[1]: sysstat-collect.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit sysstat-collect.service has successfully entered the 'dead' state.
+Nov 27 17:20:03 secondary systemd[1]: Started system activity accounting tool.
+-- Subject: Unit sysstat-collect.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit sysstat-collect.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:21:19 secondary sudo[94962]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p web/static/css[0m
+Nov 27 17:21:19 secondary sudo[94962]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:19 secondary sudo[94962]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:20 secondary sudo[95009]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tee web/static/css/styles.css[0m
+Nov 27 17:21:20 secondary sudo[95009]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:20 secondary sudo[95009]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:27 secondary sudo[95034]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p /pervasiveCX_mnt/web/css[0m
+Nov 27 17:21:27 secondary sudo[95034]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:27 secondary sudo[95034]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:27 secondary sudo[95059]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/cp web/static/css/styles.css /pervasiveCX_mnt/web/css/styles.css[0m
+Nov 27 17:21:27 secondary sudo[95059]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:27 secondary sudo[95059]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:39 secondary sudo[95107]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/mkdir -p web/static[0m
+Nov 27 17:21:39 secondary sudo[95107]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:39 secondary sudo[95107]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:40 secondary sudo[95154]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/tee web/static/index.html[0m
+Nov 27 17:21:40 secondary sudo[95154]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:40 secondary sudo[95154]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:21:55 secondary sudo[95180]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/cp web/static/index.html /pervasiveCX_mnt/web/index.html[0m
+Nov 27 17:21:55 secondary sudo[95180]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:21:55 secondary sudo[95180]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:34 secondary sudo[95217]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:22:34 secondary sudo[95217]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:35 secondary sudo[95217]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:40 secondary sudo[95287]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl restart pervasivecx-web[0m
+Nov 27 17:22:41 secondary sudo[95287]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:41 secondary systemd[1]: Stopping pervasiveCX Web UI & Capture API...
+-- Subject: Unit pervasivecx-web.service has begun shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has begun shutting down.
+Nov 27 17:22:41 secondary systemd[1]: pervasivecx-web.service: Succeeded.
+-- Subject: Unit succeeded
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has successfully entered the 'dead' state.
+Nov 27 17:22:41 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:41 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:22:41 secondary sudo[95287]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:41 secondary python3[95292]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:22:41 secondary pcx-web[95292]: Traceback (most recent call last):
+Nov 27 17:22:41 secondary pcx-web[95292]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:22:41 secondary pcx-web[95292]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:22:41 secondary pcx-web[95292]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:22:41 secondary pcx-web[95292]:     self.server_bind()
+Nov 27 17:22:41 secondary pcx-web[95292]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:22:41 secondary pcx-web[95292]:     self.socket.bind(self.server_address)
+Nov 27 17:22:41 secondary pcx-web[95292]: OSError: [Errno 98] Address already in use
+Nov 27 17:22:41 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:22:41 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:41 secondary abrt-server[95317]: [0;1;39m[0;1;31m[0;1;39mDeleting problem directory Python3-2025-11-27-17:22:41-95292 (dup of Python3-2025-11-27-15:38:47-10143)[0m
+Nov 27 17:22:41 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:22:41 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 1.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:22:41 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:41 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:22:41 secondary dbus-daemon[697]: [system] Activating service name='org.freedesktop.problems' requested by ':1.2153' (uid=0 pid=95324 comm="/usr/libexec/platform-python /usr/bin/abrt-action-") (using servicehelper)
+Nov 27 17:22:41 secondary dbus-daemon[697]: [system] Successfully activated service 'org.freedesktop.problems'
+Nov 27 17:22:41 secondary abrt-server[95317]: [0;1;39m[0;1;31m[0;1;39mSending a notification email to: "root@localhost"[0m
+Nov 27 17:22:41 secondary abrt-server[95317]: [0;1;39m[0;1;31m[0;1;39m/usr/sbin/sendmail: No such file or directory[0m
+Nov 27 17:22:41 secondary abrt-server[95317]: [0;1;39m[0;1;31m[0;1;39m. . . message not sent.[0m
+Nov 27 17:22:41 secondary abrt-server[95317]: [0;1;39m[0;1;31m[0;1;39mError running '/bin/mailx'[0m
+Nov 27 17:22:41 secondary python3[95325]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:22:41 secondary abrt-server[95336]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:22:41 secondary pcx-web[95325]: Traceback (most recent call last):
+Nov 27 17:22:41 secondary pcx-web[95325]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:22:41 secondary pcx-web[95325]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:22:41 secondary pcx-web[95325]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:22:41 secondary pcx-web[95325]:     self.server_bind()
+Nov 27 17:22:41 secondary pcx-web[95325]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:22:41 secondary pcx-web[95325]:     self.socket.bind(self.server_address)
+Nov 27 17:22:41 secondary pcx-web[95325]: OSError: [Errno 98] Address already in use
+Nov 27 17:22:41 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:22:41 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:41 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:22:41 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 2.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:22:41 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:41 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:22:42 secondary python3[95338]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:22:42 secondary abrt-server[95340]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:22:42 secondary pcx-web[95338]: Traceback (most recent call last):
+Nov 27 17:22:42 secondary pcx-web[95338]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:22:42 secondary pcx-web[95338]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:22:42 secondary pcx-web[95338]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:22:42 secondary pcx-web[95338]:     self.server_bind()
+Nov 27 17:22:42 secondary pcx-web[95338]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:22:42 secondary pcx-web[95338]:     self.socket.bind(self.server_address)
+Nov 27 17:22:42 secondary pcx-web[95338]: OSError: [Errno 98] Address already in use
+Nov 27 17:22:42 secondary sudo[95341]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:22:42 secondary sudo[95341]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:42 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:22:42 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:42 secondary sudo[95341]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:42 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:22:42 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 3.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:22:42 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:42 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:22:42 secondary python3[95368]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:22:42 secondary abrt-server[95370]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:22:42 secondary pcx-web[95368]: Traceback (most recent call last):
+Nov 27 17:22:42 secondary pcx-web[95368]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:22:42 secondary pcx-web[95368]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:22:42 secondary pcx-web[95368]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:22:42 secondary pcx-web[95368]:     self.server_bind()
+Nov 27 17:22:42 secondary pcx-web[95368]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:22:42 secondary pcx-web[95368]:     self.socket.bind(self.server_address)
+Nov 27 17:22:42 secondary pcx-web[95368]: OSError: [Errno 98] Address already in use
+Nov 27 17:22:42 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:22:42 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:42 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:22:42 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 4.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:22:42 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:42 secondary systemd[1]: Started pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished start-up
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 27 17:22:43 secondary python3[95374]: detected unhandled Python exception in '/opt/pervasivecx/current/lib/pcx_web_server.py'
+Nov 27 17:22:43 secondary abrt-server[95376]: [0;1;31m[0;1;39m[0;1;31mNot saving repeating crash in '/opt/pervasivecx/current/lib/pcx_web_server.py'[0m
+Nov 27 17:22:43 secondary pcx-web[95374]: Traceback (most recent call last):
+Nov 27 17:22:43 secondary pcx-web[95374]:   File "/opt/pervasivecx/current/lib/pcx_web_server.py", line 293, in <module>
+Nov 27 17:22:43 secondary pcx-web[95374]:     with socketserver.TCPServer((bind_host, port), PcxHandler) as httpd:
+Nov 27 17:22:43 secondary pcx-web[95374]:   File "/usr/lib64/python3.6/socketserver.py", line 456, in __init__
+Nov 27 17:22:43 secondary pcx-web[95374]:     self.server_bind()
+Nov 27 17:22:43 secondary pcx-web[95374]:   File "/usr/lib64/python3.6/socketserver.py", line 470, in server_bind
+Nov 27 17:22:43 secondary pcx-web[95374]:     self.socket.bind(self.server_address)
+Nov 27 17:22:43 secondary pcx-web[95374]: OSError: [Errno 98] Address already in use
+Nov 27 17:22:43 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Main process exited, code=exited, status=1/FAILURE[0m
+Nov 27 17:22:43 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:43 secondary systemd[1]: pervasivecx-web.service: Service RestartSec=100ms expired, scheduling restart.
+Nov 27 17:22:43 secondary systemd[1]: pervasivecx-web.service: Scheduled restart job, restart counter is at 5.
+-- Subject: Automatic restarting of a unit has been scheduled
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Automatic restarting of the unit pervasivecx-web.service has been scheduled, as the result for
+-- the configured Restart= setting for the unit.
+Nov 27 17:22:43 secondary systemd[1]: Stopped pervasiveCX Web UI & Capture API.
+-- Subject: Unit pervasivecx-web.service has finished shutting down
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has finished shutting down.
+Nov 27 17:22:43 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Start request repeated too quickly.[0m
+Nov 27 17:22:43 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:43 secondary systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start pervasiveCX Web UI & Capture API.[0m
+-- Subject: Unit pervasivecx-web.service has failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has failed.
+-- 
+-- The result is failed.
+Nov 27 17:22:44 secondary sudo[95378]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:22:44 secondary sudo[95378]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:44 secondary sudo[95378]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:45 secondary sudo[95404]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl status pervasivecx-web[0m
+Nov 27 17:22:45 secondary sudo[95404]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:45 secondary sudo[95404]: pam_unix(sudo:session): session closed for user root
+Nov 27 17:22:49 secondary sudo[95430]: [0;1;39m[0;1;31m[0;1;39m    root : TTY=pts/0 ; PWD=/root/pervasivecx ; USER=root ; COMMAND=/bin/systemctl start pervasivecx-web[0m
+Nov 27 17:22:49 secondary sudo[95430]: pam_unix(sudo:session): session opened for user root by root(uid=0)
+Nov 27 17:22:49 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Start request repeated too quickly.[0m
+Nov 27 17:22:49 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-web.service: Failed with result 'exit-code'.[0m
+-- Subject: Unit failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- The unit pervasivecx-web.service has entered the 'failed' state with result 'exit-code'.
+Nov 27 17:22:49 secondary systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start pervasiveCX Web UI & Capture API.[0m
+-- Subject: Unit pervasivecx-web.service has failed
+-- Defined-By: systemd
+-- Support: https://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit pervasivecx-web.service has failed.
+-- 
+-- The result is failed.
+Nov 27 17:22:49 secondary sudo[95430]: pam_unix(sudo:session): session closed for user root

@@ -1,0 +1,4 @@
+datasource:
+  url: "jdbc:postgresql://localhost:5432/pervasivecx"
+  username: "pervasivecx"
+  password: "change_me"

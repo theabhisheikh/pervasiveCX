@@ -1,0 +1,4 @@
+collectors:
+  schedule:
+    enabled: false
+    cron: "0 0 * * *"

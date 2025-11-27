@@ -1,0 +1,13 @@
+/pervasiveCX_mnt/logs/core/*.log
+/pervasiveCX_mnt/logs/web/*.log
+/pervasiveCX_mnt/logs/db/*.log
+/pervasiveCX_mnt/logs/audit/*.log
+{
+  daily
+  rotate 14
+  missingok
+  notifempty
+  compress
+  delaycompress
+  copytruncate
+}

@@ -1,0 +1,2 @@
+# Daily DB backup for pervasiveCX at 02:15
+15 2 * * * pervasivecx /opt/pervasivecx/current/bin/pcx-backup-db >> /pervasiveCX_mnt/logs/core/pervasiveCX-backup.log 2>&1

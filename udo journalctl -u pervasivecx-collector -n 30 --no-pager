@@ -1,0 +1,12 @@
+[0;1;32m●[0m pervasivecx-collector.service - pervasiveCX Collector (one-shot full capture)
+   Loaded: loaded (/etc/systemd/system/pervasivecx-collector.service; enabled; vendor preset: disabled)
+   Active: [0;1;32mactive (running)[0m since Thu 2025-11-27 14:26:03 IST; 1h 29min ago
+ Main PID: 752 (bash)
+    Tasks: 2 (limit: 23222)
+   Memory: 664.0K
+   CGroup: /system.slice/pervasivecx-collector.service
+           ├─  752 bash /opt/pervasivecx/current/bin/pcx-collector
+           └─11778 sleep 90
+
+Nov 27 14:26:03 secondary systemd[1]: Started pervasiveCX Collector Service.
+Nov 27 15:11:02 secondary systemd[1]: [0;1;39m[0;1;31m[0;1;39mpervasivecx-collector.service: Current command vanished from the unit file, execution of the command list won't be resumed.[0m

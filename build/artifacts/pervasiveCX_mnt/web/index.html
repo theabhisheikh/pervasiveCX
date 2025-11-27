@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>pervasiveCX • System Intelligence Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="pcx-body">
+
+  <div class="pcx-shell">
+
+    <!-- TOP NAV -->
+    <header class="pcx-topnav">
+      <div class="pcx-topnav-left">
+        <div class="pcx-badge">PCX</div>
+        <div class="pcx-title-block">
+          <div class="pcx-title">PERVASIVECX</div>
+          <div class="pcx-subtitle">Multi-Tab System Intelligence Dashboard</div>
+        </div>
+      </div>
+      <div class="pcx-topnav-right">
+        <button id="btn-capture" class="pcx-button-primary">
+          Capture Now
+        </button>
+      </div>
+    </header>
+
+    <!-- TABS -->
+    <nav class="pcx-tabs">
+      <button class="pcx-tab-button active-tab" data-tab-target="dashboard">● Dashboard</button>
+      <button class="pcx-tab-button" data-tab-target="servers">● Servers &amp; OS</button>
+      <button class="pcx-tab-button" data-tab-target="setup">● Setup Architecture</button>
+      <button class="pcx-tab-button" data-tab-target="modules">● Modules &amp; Customization</button>
+      <button class="pcx-tab-button" data-tab-target="integrations">● Integrations &amp; Licenses</button>
+      <button class="pcx-tab-button" data-tab-target="metrics">● 30-Day Metrics</button>
+      <button class="pcx-tab-button" data-tab-target="qa">● QA &amp; Rule Engine</button>
+      <button class="pcx-tab-button" data-tab-target="logs">● Logs &amp; System Info</button>
+      <button class="pcx-tab-button" data-tab-target="admin">● Admin &amp; Config</button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="pcx-main">
+
+      <!-- DASHBOARD -->
+      <section class="pcx-tab-panel" data-tab-panel="dashboard">
+        <div class="pcx-grid pcx-grid-2">
+
+          <!-- Key KPIs -->
+          <div class="pcx-card">
+            <div class="pcx-card-header">
+              <div>
+                <div class="pcx-card-title">KEY KPIS</div>
+                <div class="pcx-card-subtitle">Last 30 days overview</div>
+              </div>
+              <div class="pcx-pill">Key KPIs • Last 30 Days</div>
+            </div>
+
+            <div class="pcx-card-body pcx-grid pcx-grid-2">
+              <div class="pcx-metric-card">
+                <div class="pcx-metric-label">Total Servers</div>
+                <div class="pcx-metric-value" id="card-total-servers-value">—</div>
+                <div class="pcx-metric-footnote">SERVER_COUNT</div>
+              </div>
+
+              <div class="pcx-metric-card">
+                <div class="pcx-metric-label">Total Captures</div>
+                <div class="pcx-metric-value" id="card-total-captures-value">—</div>
+                <div class="pcx-metric-footnote">CAPTURE_COUNT</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Health -->
+          <div class="pcx-card">
+            <div class="pcx-card-header">
+              <div>
+                <div class="pcx-card-title">SYSTEM HEALTH</div>
+                <div class="pcx-card-subtitle">Server &amp; capture status</div>
+              </div>
+              <div class="pcx-pill">Section • SYSTEM_HEALTH</div>
+            </div>
+
+            <div class="pcx-card-body">
+              <div class="pcx-grid pcx-grid-2">
+                <div>
+                  <div class="pcx-label">Last Capture Time</div>
+                  <div class="pcx-value" id="card-last-capture-time-value">—</div>
+                </div>
+                <div>
+                  <div class="pcx-label">Last Capture Status</div>
+                  <span class="pcx-pill pill-neutral" id="card-last-capture-status-pill">—</span>
+                </div>
+              </div>
+
+              <div class="pcx-section-spacer"></div>
+
+              <div class="pcx-section-title-row">
+                <div class="pcx-section-title">Recent Captures</div>
+                <div class="pcx-pill">TABLE</div>
+              </div>
+
+              <div class="pcx-table-wrapper">
+                <table class="pcx-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>TRIGGER_TYPE</th>
+                      <th>TRIGGERED_BY</th>
+                      <th>STATUS</th>
+                      <th>STARTED_AT</th>
+                      <th>ENDED_AT</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-captures-body">
+                    <tr>
+                      <td colspan="6" class="pcx-muted">
+                        Data wiring will be added in a later chapter.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SERVERS & OS -->
+      <section class="pcx-tab-panel hidden" data-tab-panel="servers">
+        <div class="pcx-grid pcx-grid-2">
+
+          <!-- Server Overview -->
+          <div class="pcx-card">
+            <div class="pcx-card-header">
+              <div>
+                <div class="pcx-card-title">SERVER OVERVIEW</div>
+                <div class="pcx-card-subtitle">Specs and OS details</div>
+              </div>
+              <div class="pcx-pill">Section • SRV_OVERVIEW</div>
+            </div>
+
+            <div class="pcx-card-body">
+              <div class="pcx-section-title-row">
+                <div class="pcx-section-title">Servers</div>
+                <div class="pcx-pill">TABLE</div>
+              </div>
+
+              <div class="pcx-table-wrapper">
+                <table class="pcx-table">
+                  <thead>
+                    <tr>
+                      <th>HOSTNAME</th>
+                      <th>IP_ADDRESS</th>
+                      <th>ENVIRONMENT</th>
+                      <th>OS_NAME</th>
+                      <th>OS_VERSION</th>
+                      <th>CPU_CORES</th>
+                      <th>RAM_MB</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-servers-body">
+                    <tr>
+                      <td colspan="7" class="pcx-muted">
+                        Data wiring will be added in a later chapter.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Storage -->
+          <div class="pcx-card">
+            <div class="pcx-card-header">
+              <div>
+                <div class="pcx-card-title">STORAGE (DF -H)</div>
+                <div class="pcx-card-subtitle">Mount points &amp; usage</div>
+              </div>
+              <div class="pcx-pill">Section • SRV_STORAGE</div>
+            </div>
+
+            <div class="pcx-card-body">
+              <div class="pcx-section-title-row">
+                <div class="pcx-section-title">Disk Usage</div>
+                <div class="pcx-pill">TABLE</div>
+              </div>
+
+              <div class="pcx-table-wrapper">
+                <table class="pcx-table">
+                  <thead>
+                    <tr>
+                      <th>SERVER_CODE</th>
+                      <th>MOUNT_POINT</th>
+                      <th>FILESYSTEM_TYPE</th>
+                      <th>TOTAL_GB</th>
+                      <th>USED_GB</th>
+                      <th>AVAILABLE_GB</th>
+                      <th>USAGE_PERCENT</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-volumes-body">
+                    <tr>
+                      <td colspan="7" class="pcx-muted">
+                        Data wiring will be added in a later chapter.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- OTHER TABS (placeholders) -->
+      <section class="pcx-tab-panel hidden" data-tab-panel="setup">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">SETUP ARCHITECTURE</div>
+            <div class="pcx-card-subtitle">Topology &amp; deployment view</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              Data wiring for full architecture diagrams and environment mapping
+              will be added in a later chapter.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="modules">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">MODULES &amp; CUSTOMIZATION</div>
+            <div class="pcx-card-subtitle">System apps, ACP modules &amp; custom logic</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              This tab will later show module inventory, customizations and change history.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="integrations">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">INTEGRATIONS &amp; LICENSES</div>
+            <div class="pcx-card-subtitle">CRM, external systems &amp; licensing</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              Future chapters will surface CRM integration design, license snapshots,
+              and external connectors in a single view.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="metrics">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">30-DAY METRICS</div>
+            <div class="pcx-card-subtitle">Volume, AHT, concurrency &amp; channel mix</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              KPI graphs will be implemented after metric collection is wired.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="qa">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">QA &amp; RULE ENGINE</div>
+            <div class="pcx-card-subtitle">Scoring, rules &amp; automation</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              QA parameters and rule engines will be exposed here in future chapters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="logs">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">LOGS &amp; SYSTEM INFO</div>
+            <div class="pcx-card-subtitle">Log categories, rotation &amp; system details</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              This tab will link to summarized log health and storage from Chapter B.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pcx-tab-panel hidden" data-tab-panel="admin">
+        <div class="pcx-card">
+          <div class="pcx-card-header">
+            <div class="pcx-card-title">ADMIN &amp; CONFIG</div>
+            <div class="pcx-card-subtitle">Configuration metadata &amp; import/export</div>
+          </div>
+          <div class="pcx-card-body">
+            <p class="pcx-muted">
+              Future work: configuration editors, snapshot import/export triggers,
+              and environment-wide admin settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Toast -->
+    <div id="toast" class="pcx-toast">Notification</div>
+
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
